@@ -70,6 +70,12 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("4ed327c0: what color is a banana"), containsString("yellow"));
     }
 
+    /*
+    @Test
+    public void responseWithFibonacci() throws Exception {
+
+    }*/
+
 
 
 

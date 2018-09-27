@@ -75,7 +75,6 @@ public class QueryProcessor {
 
         if (query.toLowerCase().contains("prime")) {
             String numbers;
-
             numbers = query.toLowerCase().split(":")[2];
             String[] numberList = numbers.split(",");
             List<String> arr = new ArrayList<>();
@@ -86,9 +85,13 @@ public class QueryProcessor {
                 }
             }
 
-
-            String stringJoined= String.join(", ", arr);
-            return stringJoined;
+            if(arr.size() >=2)
+                return String.join(", ", arr);
+            else if(arr.size() ==1){
+                return arr.get(0);
+            }
+            else
+                return "";
         }
 
         if (query.contains("Eiffel")){
