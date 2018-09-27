@@ -64,11 +64,11 @@ public class QueryProcessorTest {
     public void responseWithCity() throws Exception {
         assertThat(queryProcessor.process("4ed327c0: which city is the Eiffel tower in"), containsString("Paris"));
     }
-//
-//        @Test
-//    public void responseWithCity() throws Exception {
-//        assertThat(queryProcessor.process("4ed327c0: what color is banana in"), containsString("Paris"));
-//    }
+
+        @Test
+    public void responseWithBanana() throws Exception {
+        assertThat(queryProcessor.process("4ed327c0: what color is a banana"), containsString("yellow"));
+    }
 
 
 
