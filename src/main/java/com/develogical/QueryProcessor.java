@@ -1,5 +1,6 @@
 package com.develogical;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class QueryProcessor {
@@ -34,6 +35,18 @@ public class QueryProcessor {
             return maximum.toString();
 
         }
+        if (query.toLowerCase().contains("plus")) {
+            String[] numerList = query.split(" ");
+            Integer sum = 0;
+            for(int i=0; i<numerList.length; i++){
+                if(numerList[i].matches("\\d+")){
+                    sum += Integer.parseInt(numerList[i]);
+                }
+            }
+            return sum.toString();
+        }
+
+
         return "";
     }
 }
