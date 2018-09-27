@@ -76,6 +76,19 @@ public class QueryProcessorTest {
 
     }*/
 
+    /*
+    @Test
+    public void responseTheresaMay() {
+
+    }
+    */
+
+    @Test
+    public void responseWithSubtraction() throws Exception {
+        assertThat(queryProcessor.process("a8906340: what is 19 minus 9"), containsString("10"));
+    }
+
+
 
 
 

@@ -101,6 +101,26 @@ public class QueryProcessor {
         if (query.contains("banana")){
             return "yellow";
         }
+
+        if (query.toLowerCase().contains("minus")) {
+            String[] numerList = query.split(" ");
+            Integer result = 0;
+            //System.out.println("subtraction block reached");
+            boolean flag = false;
+            for(int i=0; i<numerList.length; i++){
+                if(flag ==false && numerList[i].matches("\\d+")){
+                    flag = true;
+                    result += Integer.parseInt(numerList[i]);
+                }
+                else if(flag == true && numerList[i].matches("\\d+")){
+                    result -= Integer.parseInt(numerList[i]);
+                }
+            }
+            return result.toString();
+        }
+
+
+
         return "";
     }
 
