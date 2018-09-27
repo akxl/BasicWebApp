@@ -50,6 +50,11 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("e14ec460: what is 2 multiplied by 16"), containsString("32"));
     }
 
+    @Test
+    public void responseWithBothSquareAndCube() throws Exception {
+        assertThat(queryProcessor.process("e14ec460: which of the following numbers is both a square and a cube: 325, 2116, 887, 531441"), containsString("531441"));
+    }
+
 
 
 
