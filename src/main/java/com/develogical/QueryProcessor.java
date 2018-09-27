@@ -45,6 +45,16 @@ public class QueryProcessor {
             }
             return sum.toString();
         }
+        if (query.toLowerCase().contains("multiplied by")) {
+            String[] numerList = query.split(" ");
+            Integer multiply = 1;
+            for(int i=0; i<numerList.length; i++){
+                if(numerList[i].matches("\\d+")){
+                    multiply *= Integer.parseInt(numerList[i]);
+                }
+            }
+            return multiply.toString();
+        }
 
 
         return "";
