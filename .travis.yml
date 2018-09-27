@@ -5,3 +5,4 @@ script: mvn clean verify
 deploy:
   provider: heroku
   api_key: 5ce86502-b276-459a-887f-4778c0351283
+  app: naughtiest-maximus
