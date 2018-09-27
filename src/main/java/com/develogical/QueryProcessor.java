@@ -91,8 +91,12 @@ public class QueryProcessor {
             return stringJoined;
         }
 
+        if (query.contains("Eiffel")){
+            return "Paris";
+        }
         return "";
     }
+
 
 
     private Boolean isSquare(int x) {

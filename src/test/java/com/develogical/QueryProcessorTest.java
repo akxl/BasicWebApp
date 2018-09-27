@@ -60,6 +60,17 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("e14ec460: which of the following numbers are primes: 221, 131, 193, 173"), containsString("131, 193, 173"));
     }
 
+    @Test
+    public void responseWithCity() throws Exception {
+        assertThat(queryProcessor.process("4ed327c0: which city is the Eiffel tower in"), containsString("Paris"));
+    }
+//
+//        @Test
+//    public void responseWithCity() throws Exception {
+//        assertThat(queryProcessor.process("4ed327c0: what color is banana in"), containsString("Paris"));
+//    }
+
+
 
 
 
