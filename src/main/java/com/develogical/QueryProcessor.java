@@ -73,6 +73,23 @@ public class QueryProcessor {
 
         }
 
+        if (query.toLowerCase().contains("prime")) {
+            String numbers;
+
+            numbers = query.toLowerCase().split(":")[2];
+            String[] numberList = numbers.split(",");
+            List<String> arr = new ArrayList<>();
+            for (String string : numberList) {
+                Integer num = Integer.parseInt(string.trim());
+                if (isPrime(num)) {
+                    arr.add(num.toString());
+                }
+            }
+
+
+            String stringJoined= String.join(", ", arr);
+            return stringJoined;
+        }
 
         return "";
     }
@@ -96,4 +113,13 @@ public class QueryProcessor {
         return result;
     }
 
+    private Boolean isPrime(int x){
+        Boolean res = true;
+        for(int i=2; i<Math.sqrt(x); i++){
+            if(x%i == 0 ){
+                res = false;
+            }
+        }
+        return res;
+    }
 }

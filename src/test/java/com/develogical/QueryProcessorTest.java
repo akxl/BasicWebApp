@@ -55,6 +55,11 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("e14ec460: which of the following numbers is both a square and a cube: 325, 2116, 887, 531441"), containsString("531441"));
     }
 
+    @Test
+    public void responseWithPrimeNumber() throws Exception {
+        assertThat(queryProcessor.process("e14ec460: which of the following numbers are primes: 221, 131, 193, 173"), containsString("131, 193, 173"));
+    }
+
 
 
 
