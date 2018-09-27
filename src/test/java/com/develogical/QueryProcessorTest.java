@@ -35,4 +35,9 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("a8906340: what is your name"), containsString("naughtiest-maximus"));
     }
 
+    @Test
+    public void responseWithLargertNumber() throws Exception {
+        assertThat(queryProcessor.process("a8906340: which of the following numbers is the largest: 105, 815, 15, 58"), containsString("815"));
+    }
+
 }

@@ -1,5 +1,7 @@
 package com.develogical;
 
+import java.util.List;
+
 public class QueryProcessor {
 
     public String process(String query) {
@@ -16,6 +18,21 @@ public class QueryProcessor {
         }
         if (query.toLowerCase().contains("what is your name")) {
             return "naughtiest-maximus";
+        }
+        if (query.toLowerCase().contains("which of the following numbers is the largest:")) {
+            String numbers;
+
+            numbers = query.toLowerCase().split(":")[2];
+            String[] numberList = numbers.split(",");
+            Integer maximum = -9999;
+            for (String string : numberList) {
+                if (Integer.parseInt(string.trim()) > maximum) {
+                    maximum = Integer.parseInt(string.trim());
+                }
+            }
+
+            return maximum.toString();
+
         }
         return "";
     }
