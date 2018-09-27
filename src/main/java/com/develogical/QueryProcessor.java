@@ -11,6 +11,9 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("jedi")) {
             return "The jedi think that they are cool. Also, they fight the sith.";
         }
+        if (query.toLowerCase().contains("what is your name")) {
+            return "naughtiest-maximus";
+        }
         return "";
     }
 }
